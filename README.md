@@ -27,4 +27,4 @@ This model was independently measured and created in OpenSCAD; it does not
 include the original STL. Original design in this repository is released under
 the MIT License; see `LICENSE`.
 
-The OpenSCAD source code in this repository was generated using Google Search (AI mode) and Cline integrated with GPT-6 models.
+The parametric OpenSCAD components were authored via an AI-assisted workflow utilizing Google Search AI mode for geometric discovery and Cline (GPT-6) for programmatic Constructive Solid Geometry (CSG) compilation.
