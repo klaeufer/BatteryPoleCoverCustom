@@ -1,4 +1,4 @@
-# Battery pole adapter deck
+# Custom battery pole cover
 
 Parametric OpenSCAD cover for a 94R/H7-style battery positive terminal area. The deck
 has a clearance hole for a mil-spec terminal top post, perimeter support walls,
