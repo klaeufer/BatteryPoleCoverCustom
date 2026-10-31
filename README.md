@@ -20,9 +20,11 @@ current dimensions are project-specific starting values, not a guaranteed fit.
 
 - [94R/H7 battery height spacer](https://github.com/klaeufer/BatterySpacer94R)
 
-## Attribution
+## Attributions
 
 Inspired by “Car Battery Cover” by dumbstone ([Thingiverse Thing 2955260](https://www.thingiverse.com/thing:2955260)).
 This model was independently measured and created in OpenSCAD; it does not
 include the original STL. Original design in this repository is released under
 the MIT License; see `LICENSE`.
+
+The OpenSCAD source code in this repository was generated using Google Search (AI mode) and Cline integrated with GPT-6 models.
