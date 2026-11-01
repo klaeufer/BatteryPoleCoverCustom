@@ -20,6 +20,8 @@ To check and export from the command line, run `./scripts/export_stl.sh` from
 the project directory. It writes `positive_cover.stl` beside the SCAD file and
 fails if OpenSCAD reports a warning/error or produces an empty output. If the
 OpenSCAD CLI is not on your `PATH`, set `OPENSCAD_BIN` to its executable path.
+GitHub Actions runs this check on pushes and pull requests; successful runs
+also publish the rendered STL as a downloadable artifact.
 
 ## Related projects
 

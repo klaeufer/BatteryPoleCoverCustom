@@ -1,0 +1,39 @@
+name: Validate OpenSCAD model
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    name: Render and validate STL
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install OpenSCAD
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes openscad xvfb
+          openscad --version
+
+      - name: Check export script syntax
+        run: sh -n scripts/export_stl.sh
+
+      - name: Render and validate model
+        run: xvfb-run --auto-servernum ./scripts/export_stl.sh
+
+      - name: Upload rendered STL
+        uses: actions/upload-artifact@v4
+        with:
+          name: positive-cover-stl
+          path: positive_cover.stl
+          if-no-files-found: error
+          retention-days: 14
