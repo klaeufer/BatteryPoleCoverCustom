@@ -6,24 +6,24 @@ $fn = 100;
 
 // --- 1. CORE PARAMETERS & CLEARANCES ---
 clearance       = 0.4;   // Clearance buffer for standard printer filament expansion
-wall_thickness  = 2.5;   // Solid thickness for robust engine bay durability (ABS/ASA)
+wall_thickness  = 2.4;   // Solid thickness for robust engine bay durability (ABS/ASA)
 pin_dia         = 4.8;   // Target diameter for a snug friction fit inside 5.0mm holes
 pin_height      = 8.0;  // Approximate pin length, based on the reference image
 pin_slit_width  = 0.8;   // Width of each tension slit
 pin_slit_length = pin_height / 2; // Slit runs upward from the free end
-wall_gusset     = 3.0;   // Interior triangular brace size at wall/plate joints
-round_corner_gusset_size = 3.0; // Plan size of brace at rounded -X/+Y corner
+wall_gusset     = 3.2;   // Interior triangular brace size at wall/plate joints
+round_corner_gusset_size = 3.2; // Plan size of brace at rounded -X/+Y corner
 round_corner_gusset_drop = 22.0;  // Vertical depth of that brace below the plate
 
 // --- 2. DECK FACE FOOTPRINT (70mm x 75mm) ---
 deck_width      = 70.0;  // Total X-axis width including casing overlap
 deck_length     = 75.0;  // Total Y-axis length including casing overlap
-plate_thickness = 2.0;   // Height of the flat top deck plate face
+plate_thickness = 2.4;   // Height of the flat top deck plate face
 wall_drop       = 22.0;  // Drop from battery-facing plate underside to wall bottoms
 short_wall_length = 15.0; // Maximum return length on the +X edge
 minus_x_wall_start_y = 5.0; // Leave the -Y plate overlap without a dropped wall
 corner_radius   = 6.0;   // Rounded trim radius at the -X / +Y corner
-perimeter_chamfer = 1.0; // Plan-view bevel along the -X and +Y outside edges
+perimeter_chamfer = 1.2; // Plan-view bevel along the -X and +Y outside edges
 
 // --- 3. HARDWARE PASS-THROUGH LOCATION ---
 // Oversized to 21mm to build in horizontal wiggle-room around the pole base

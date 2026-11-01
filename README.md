@@ -16,6 +16,11 @@ match your battery and terminal, preview, then render (F6) and export an STL.
 Check clearances and fit against the actual battery before installation; the
 current dimensions are project-specific starting values, not a guaranteed fit.
 
+To check and export from the command line, run `./scripts/export_stl.sh` from
+the project directory. It writes `positive_cover.stl` beside the SCAD file and
+fails if OpenSCAD reports a warning/error or produces an empty output. If the
+OpenSCAD CLI is not on your `PATH`, set `OPENSCAD_BIN` to its executable path.
+
 ## Related projects
 
 - [94R/H7 battery height spacer](https://github.com/klaeufer/BatterySpacer94R)
