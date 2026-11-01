@@ -27,9 +27,9 @@ perimeter_chamfer = 1.2; // Plan-view bevel along the -X and +Y outside edges
 
 // --- 3. HARDWARE PASS-THROUGH LOCATION ---
 // Oversized to 21mm to build in horizontal wiggle-room around the pole base
-post_center_x   = 30.0;  
+post_center_x   = 28.0;  
 post_center_y   = 54.0;  
-pass_through_dia= 22.0;  // Intentionally wider than SAE base spec for placement flexibility
+pass_through_dia= 23.0;  // Intentionally wider than SAE base spec for placement flexibility
 
 // --- 4. ANCHOR PIN PLACEMENT (+X / near edge) ---
 pin_edge_inset  = 8.0;   // Pin centers are inset from the +X edge
