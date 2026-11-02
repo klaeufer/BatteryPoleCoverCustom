@@ -5,9 +5,19 @@ has a clearance hole for a mil-spec terminal top post, perimeter support walls,
 reinforcing gussets, and two slotted locating pins. Dimensions are in
 millimeters.
 
-This is a custom cover for the positive terminal stack shown on the included images.
-Unless you have a similar stack, this cover is probably not for you.
-The reason for this stack is to have a reliable way to bolt a [Blue Sea terminal mount fuse block 5023](https://www.bluesea.com/products/5023/ST_Blade_Battery_Terminal_Mount_Fuse_Block) (also part of the [5024 kit](https://www.bluesea.com/products/5024/ST_Blade_Battery_Terminal_Mount_Fuse_Block_Kit)) to the terminal.
+## Use case
+
+This is a custom cover for the positive terminal stack shown on the included images. Top-to-bottom order:
+
+- terminal-mount accessory fuse block
+- OEM terminal
+- mil-spec terminal with top post
+- positive battery post
+
+The purpose of this stack is to have a reliable way to bolt a [Blue Sea terminal mount fuse block 5023](https://www.bluesea.com/products/5023/ST_Blade_Battery_Terminal_Mount_Fuse_Block) (also part of the [5024 kit](https://www.bluesea.com/products/5024/ST_Blade_Battery_Terminal_Mount_Fuse_Block_Kit)) to the terminal.
+
+Unless you have a similar stack, this pole cover is probably not for you.
+If you do have a DIN/European Norm (EN) battery, you'll probably want a standard pole cover, similar to this one but without the clearance hole, such as [the one referenced below](https://www.thingiverse.com/thing:2955260).
 
 ## How to use
 
