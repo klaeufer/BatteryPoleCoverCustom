@@ -9,7 +9,7 @@ millimeters.
 
 This is a custom cover for the positive terminal stack shown on the included images. 
 
-![Custom positive terminal stack with fuse block](data/TerminalStackSideView.jpg)
+![Custom positive terminal stack with fuse block](images/TerminalStackSideView.jpg)
 
 Top-to-bottom order:
 
