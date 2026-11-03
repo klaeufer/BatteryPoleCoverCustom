@@ -7,7 +7,11 @@ millimeters.
 
 ## Use case
 
-This is a custom cover for the positive terminal stack shown on the included images. Top-to-bottom order:
+This is a custom cover for the positive terminal stack shown on the included images. 
+
+![Custom positive terminal stack with fuse block](data/TerminalStackSideView.jpg)
+
+Top-to-bottom order:
 
 - terminal-mount accessory fuse block
 - OEM terminal
