@@ -24,11 +24,12 @@ short_wall_length = 15.0; // Maximum return length on the +X edge
 minus_x_wall_start_y = 5.0; // Leave the -Y plate overlap without a dropped wall
 corner_radius   = 6.0;   // Rounded trim radius at the -X / +Y corner
 perimeter_chamfer = 1.2; // Plan-view bevel along the -X and +Y outside edges
+top_edge_chamfer = wall_thickness / 2; // 45-degree bevel around the top plate perimeter
 
 // --- 3. HARDWARE PASS-THROUGH LOCATION ---
 // Oversized to 21mm to build in horizontal wiggle-room around the pole base
-post_center_x   = 28.0;  
-post_center_y   = 54.0;  
+post_center_x   = 28.0;
+post_center_y   = 54.0;
 pass_through_dia= 23.0;  // Intentionally wider than SAE base spec for placement flexibility
 
 // --- 4. ANCHOR PIN PLACEMENT (+X / near edge) ---
@@ -45,19 +46,31 @@ union() {
     difference() {
         // I. Additive Solid Structure (Deck Plate + Specified Downward Walls)
         union() {
-            // The main flat top plate face
-            cube([deck_width, deck_length, plate_thickness]);
-            
+            // Plate perimeter profiles are offset inward at the top to create
+            // a 45-degree chamfer, including a concentric offset of the round
+            // -X/+Y corner. The straight upper edges meet the rounded profile.
+            linear_extrude(height = plate_thickness - top_edge_chamfer)
+                deck_outline(0, corner_radius);
+            translate([0, 0, plate_thickness - top_edge_chamfer])
+                hull() {
+                    linear_extrude(height = 0.01)
+                        deck_outline(0, corner_radius);
+                    translate([0, 0, top_edge_chamfer - 0.01])
+                        linear_extrude(height = 0.01)
+                            deck_outline(top_edge_chamfer,
+                                         corner_radius - top_edge_chamfer);
+                }
+
             // Downward Wall along the -X axis boundary
             translate([0, minus_x_wall_start_y, -wall_drop])
                 cube([wall_thickness,
                       deck_length - minus_x_wall_start_y,
                       wall_drop]);
-                
+
             // Downward Wall along the +Y axis boundary
             translate([0, deck_length - wall_thickness, -wall_drop])
                 cube([deck_width, wall_thickness, wall_drop]);
-                
+
             // Optional narrow stabilizing wall section along the +X axis
             // Shunted toward the +Y edge to anchor the corner structure cleanly
             translate([deck_width - wall_thickness,
@@ -85,9 +98,10 @@ union() {
             // Oversized center pass-through hole for the mil-spec post connection
             translate([post_center_x, post_center_y, -wall_drop - 1])
                 cylinder(h = total_height() + 2, d = pass_through_dia + clearance);
-                
-            // Round the -X / +Y corner: remove the square outside the quarter
-            // circle centered one radius in from each edge.
+
+            // Continue the rounded -X/+Y outside corner through the dropped
+            // walls and gusset. This matches the lower plate outline; the
+            // inset top profile preserves the perimeter bevel above it.
             translate([-1, deck_length - corner_radius, -wall_drop - 1])
                 difference() {
                     cube([corner_radius + 1, corner_radius + 1,
@@ -120,6 +134,21 @@ union() {
 
 // --- Dynamic Height Calculation Helper ---
 function total_height() = plate_thickness + wall_drop;
+
+// 2D plate outline; offset and radius shrink together for the beveled top.
+module deck_outline(inset, radius) {
+    difference() {
+        translate([inset, inset])
+            square([deck_width - 2 * inset,
+                    deck_length - 2 * inset]);
+        translate([-1, deck_length - corner_radius, -0.1])
+            difference() {
+                square([corner_radius + 1, corner_radius + 1]);
+                translate([corner_radius + 1, 0])
+                    circle(r = radius);
+            }
+    }
+}
 
 module slotted_pin(x, y) {
     difference() {
