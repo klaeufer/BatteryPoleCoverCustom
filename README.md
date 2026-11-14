@@ -16,7 +16,7 @@ This is a custom cover for the positive terminal stack shown on the included ima
 Top-to-bottom order:
 
 - terminal-mount accessory fuse block
-- OEM terminal
+- OEM terminal (with part of old OEM cover)
 - mil-spec terminal with top post
 - positive battery post
 
@@ -31,7 +31,7 @@ If you do have a DIN/European Norm (EN) battery, you'll probably want a standard
 
 Top-to-bottom order:
 
-- Toyota OEM connector cover P/N 82821-35020
+- Toyota OEM terminal cover P/N 82821-35020
 - pole cover in black TPU (the design shared here)
 
 ## How to use
