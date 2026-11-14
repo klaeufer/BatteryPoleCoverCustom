@@ -9,6 +9,8 @@ millimeters.
 
 This is a custom cover for the positive terminal stack shown on the included images. 
 
+### Before
+
 <img src="images/TerminalStackSideView.jpg" width="400" alt="Custom positive terminal stack with fuse block"/>
 
 Top-to-bottom order:
@@ -22,6 +24,15 @@ The purpose of this stack is to have a reliable way to bolt a [Blue Sea terminal
 
 Unless you have a similar stack, this pole cover is probably not for you.
 If you do have a DIN/European Norm (EN) battery, you'll probably want a standard pole cover, similar to this one but without the clearance hole, such as [the one referenced below](https://www.thingiverse.com/thing:2955260).
+
+### After
+
+<img src="images/TPUPoleCoverInstalled.jpg" width="400" alt="Custom positive terminal stack with fuse block"/>
+
+Top-to-bottom order:
+
+- Toyota OEM connector cover P/N 82821-35020
+- pole cover in black TPU (the design shared here)
 
 ## How to use
 
